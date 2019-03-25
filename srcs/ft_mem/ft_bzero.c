@@ -6,7 +6,7 @@
 /*   By: vmanzoni <vmanzoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/16 22:12:17 by vmanzoni          #+#    #+#             */
-/*   Updated: 2019/01/27 16:35:10 by vmanzoni         ###   ########.fr       */
+/*   Updated: 2019/03/25 14:06:25 by vmanzoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,6 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	char	*ptr;
-
-	ptr = s;
-	if (!n)
-		return ;
-	while (n--)
-	{
-		if (*ptr == '\0')
-			break ;
-		*ptr++ = '\0';
-	}
+	if (n)
+		ft_memset(s, 0, n)
 }

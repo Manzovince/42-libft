@@ -6,7 +6,7 @@
 /*   By: vmanzoni <vmanzoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/22 15:27:38 by vmanzoni          #+#    #+#             */
-/*   Updated: 2019/01/27 16:39:48 by vmanzoni         ###   ########.fr       */
+/*   Updated: 2019/03/25 14:01:22 by vmanzoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 char	*ft_itoa(int n)
 {
-	char		*nbr;
-	long long	pos;
-	long long	div;
+	char	*nbr;
+	long	pos;
+	long	div;
 
 	if (!(nbr = ft_strnew(ft_nbrlen(n) + 1)))
 		return (NULL);
