@@ -6,7 +6,7 @@
 #    By: vmanzoni <vmanzoni@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/22 14:45:27 by vmanzoni          #+#    #+#              #
-#    Updated: 2019/01/27 16:33:42 by vmanzoni         ###   ########.fr        #
+#    Updated: 2019/03/25 14:24:43 by vmanzoni         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME	=	libft.a
 
 HEADER	=	includes/libft.h
 
-SRC		=	srcs/*.c
+SRC		=	srcs/*/*.c
 
 OBJ		=	*.o
 
