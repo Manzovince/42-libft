@@ -6,7 +6,7 @@
 /*   By: vmanzoni <vmanzoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/06 21:46:33 by vmanzoni          #+#    #+#             */
-/*   Updated: 2018/11/22 22:52:04 by vmanzoni         ###   ########.fr       */
+/*   Updated: 2019/03/25 14:47:30 by vmanzoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,9 @@ char				*ft_strjoin(char const *s1, char const *s2);
 char				*ft_strtrim(char const *s);
 char				**ft_strsplit(char const *s, char c);
 char				*ft_stralloc(const char *s);
+char				*ft_strnjoin(const char *s1, const char *s2, size_t len);
+char				*ft_strnjoin_free(const char *s1, const char *s2, \
+												size_t len, char c);
 
 char				*ft_strsetnew(char c, int size);
 char				*ft_strset(char *s1, int fill);

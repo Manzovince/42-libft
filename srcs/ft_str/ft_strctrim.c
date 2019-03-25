@@ -6,9 +6,11 @@
 /*   By: vmanzoni <vmanzoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/25 14:15:39 by vmanzoni          #+#    #+#             */
-/*   Updated: 2019/03/25 14:15:48 by vmanzoni         ###   ########.fr       */
+/*   Updated: 2019/03/25 14:34:50 by vmanzoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "includes/libft.h"
 
 char	*ft_strctrim(char const *s, char c)
 {

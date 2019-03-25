@@ -6,9 +6,11 @@
 /*   By: vmanzoni <vmanzoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/25 14:15:07 by vmanzoni          #+#    #+#             */
-/*   Updated: 2019/03/25 14:15:16 by vmanzoni         ###   ########.fr       */
+/*   Updated: 2019/03/25 14:35:08 by vmanzoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "includes/libft.h"
 
 char	*ft_strdup_free(const char *s1)
 {
