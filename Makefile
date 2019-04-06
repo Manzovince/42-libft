@@ -6,7 +6,7 @@
 #    By: vmanzoni <vmanzoni@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/22 14:45:27 by vmanzoni          #+#    #+#              #
-#    Updated: 2019/04/06 10:14:16 by vmanzoni         ###   ########.fr        #
+#    Updated: 2019/04/05 21:34:17 by vmanzoni         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ SRC		=	srcs/*/*.c
 
 OBJ		=	*.o
 
-OBJ_DIR	=	objs/
+OBJ_DIR	=	ft_obj
 
 CC		=	gcc
 
