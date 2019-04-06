@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "../../includes/libft.h"
+
 int		ft_clamp(int n, int min, int max)
 {
 	if (n < min)

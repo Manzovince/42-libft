@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/libft.h"
+#include "../../includes/libft.h"
 
 int		ft_wordlen(char const *str, char c)
 {

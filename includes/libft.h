@@ -17,9 +17,9 @@
 # include <unistd.h>
 # include <string.h>
 
-/******************************************************************************/
-/*                                  STRUCTURE                                 */
-/******************************************************************************/
+/*
+** STRUCTURE
+*/
 
 typedef struct		s_list
 {
@@ -28,9 +28,9 @@ typedef struct		s_list
 	struct s_list	*next;
 }					t_list;
 
-/******************************************************************************/
-/*                               MEM FUNCTIONS                                */
-/******************************************************************************/
+/*
+** MEM FUNCTIONS
+*/
 
 void				ft_bzero(void *s, size_t n);
 
@@ -45,12 +45,13 @@ void				ft_memdel(void **ap);
 void				ft_memswap(void *a, void *b);
 int					*ft_intnew(size_t size);
 
-/******************************************************************************/
-/*                               STR FUNCTIONS                                */
-/******************************************************************************/
+/*
+** STR FUNCTIONS
+*/
 
 size_t				ft_strlen(const char *s);
 char				*ft_strdup(const char *s1);
+char				*ft_strndup(const char *s, size_t n);
 char				*ft_strcpy(char *dst, const char *src);
 char				*ft_strncpy(char *dst, const char *src, size_t n);
 char				*ft_strcat(char *s1, const char *s2);
@@ -80,29 +81,29 @@ char				*ft_stralloc(const char *s);
 char				*ft_strnjoin(const char *s1, const char *s2, size_t len);
 char				*ft_strnjoin_free(const char *s1, const char *s2, \
 										size_t len, char c);
-int		            ft_count_words(char const *str, char c);
-int		            ft_wordlen(char const *str, char c);
-int		            ft_nbrlen(int n);
+int					ft_count_words(char const *str, char c);
+int					ft_wordlen(char const *str, char c);
+int					ft_nbrlen(int n);
 
 char				*ft_strsetnew(char c, int size);
 char				*ft_strset(char *s1, int fill);
 char				*ft_strlwr(char *s1);
 char				*ft_strupr(char *s1);
 
-/******************************************************************************/
-/*                               CONV FUNCTIONS                               */
-/******************************************************************************/
+/*
+** CONV FUNCTIONS
+*/
 
-int		       		ft_atoi(const char *str);
+int					ft_atoi(const char *str);
 char				*ft_itoa(int n);
 int					ft_abs(int x);
 
 int					ft_toupper(int c);
 int					ft_tolower(int c);
 
-/******************************************************************************/
-/*                               ID FUNCTIONS                                 */
-/******************************************************************************/
+/*
+** ID FUNCTIONS
+*/
 
 int					ft_isalpha(int c);
 int					ft_isdigit(int c);
@@ -113,9 +114,9 @@ int					ft_isspace(int c);
 int					ft_isupper(int c);
 int					ft_islower(int c);
 
-/******************************************************************************/
-/*                               PRINT FUNCTIONS                              */
-/******************************************************************************/
+/*
+** PRINT FUNCTIONS
+*/
 
 void				ft_putchar(char c);
 void				ft_putstr(char const *c);
@@ -126,9 +127,9 @@ void				ft_putstr_fd(char const *s, int fd);
 void				ft_putendl_fd(char const *s, int fd);
 void				ft_putnbr_fd(int n, int fd);
 
-/******************************************************************************/
-/*                               LST FUNCTIONS                                */
-/******************************************************************************/
+/*
+** LST FUNCTIONS
+*/
 
 t_list				*ft_lstnew(void const *content, size_t content_size);
 void				ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
@@ -138,12 +139,12 @@ void				ft_lstiter(t_list *lst, void(*f)(t_list *elem));
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 void				ft_lstappend(t_list *list, t_list *new);
 
-/******************************************************************************/
-/*                               LST FUNCTIONS                                */
-/******************************************************************************/
+/*
+** SORT FUNCTIONS
+*/
 
-void	ft_bubblesort_array(char **tab, size_t n);
-int		ft_clamp(int n, int min, int max);
-void	ft_swap(int *a, int *b);
+void				ft_bubblesort_array(char **tab, size_t n);
+int					ft_clamp(int n, int min, int max);
+void				ft_swap(int *a, int *b);
 
 #endif

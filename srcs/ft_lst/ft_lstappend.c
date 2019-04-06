@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/libft.h"
+#include "../../includes/libft.h"
 
 void	ft_lstappend(t_list *list, t_list *new)
 {
