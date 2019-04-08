@@ -6,7 +6,7 @@
 /*   By: vmanzoni <vmanzoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/06 21:46:33 by vmanzoni          #+#    #+#             */
-/*   Updated: 2019/04/03 23:21:48 by vmanzoni         ###   ########.fr       */
+/*   Updated: 2019/04/08 21:48:09 by vmanzoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,15 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <string.h>
+
+/*
+** MACROS
+*/
+
+# define INT_MIN -2147483648
+# define INT_MAX 2147483647
+
+# define BUFF_SIZE 128
 
 /*
 ** STRUCTURE
@@ -113,6 +122,8 @@ int					ft_isprint(int c);
 int					ft_isspace(int c);
 int					ft_isupper(int c);
 int					ft_islower(int c);
+int					ft_isnumber(char *str);
+int					ft_isinteger(char *str);
 
 /*
 ** PRINT FUNCTIONS
