@@ -6,7 +6,7 @@
 /*   By: vmanzoni <vmanzoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/06 21:46:33 by vmanzoni          #+#    #+#             */
-/*   Updated: 2019/04/08 21:48:09 by vmanzoni         ###   ########.fr       */
+/*   Updated: 2019/04/14 21:54:41 by vmanzoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <string.h>
+# include <fcntl.h>
 
 /*
 ** MACROS
@@ -149,6 +150,14 @@ void				ft_lstadd(t_list **alst, t_list *new);
 void				ft_lstiter(t_list *lst, void(*f)(t_list *elem));
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 void				ft_lstappend(t_list *list, t_list *new);
+
+/*
+** IN FUNCTIONS
+*/
+
+char				*read_file(char *file);
+int					get_next_line(const int fd, char **line);
+
 
 /*
 ** SORT FUNCTIONS
