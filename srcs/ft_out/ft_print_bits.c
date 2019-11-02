@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_pow.c                                           :+:      :+:    :+:   */
+/*   ft_print_bits.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vmanzoni <vmanzoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/08 21:27:53 by vmanzoni          #+#    #+#             */
-/*   Updated: 2019/09/10 17:59:40 by vmanzoni         ###   ########.fr       */
+/*   Created: 2019/04/27 15:28:46 by vmanzoni          #+#    #+#             */
+/*   Updated: 2019/04/27 15:29:31 by vmanzoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/libft.h"
 
-int		ft_pow(int n, int power)
+void	ft_print_bits(unsigned int bits, int size)
 {
-	int	result;
+	unsigned int	mask;
 
-	result = 1;
-	while (power > 0)
+	mask = 1 << (size - 1);
+	while (mask)
 	{
-		result *= n;
-		power--;
+		(bits & mask) ? write(1, "1", 1) : write(1, "0", 1);
+		mask >>= 1;
 	}
-	return (power < 0) ? 0 : result;
+	write(1, "\n", 1);
 }

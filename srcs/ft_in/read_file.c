@@ -6,22 +6,22 @@
 /*   By: vmanzoni <vmanzoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/14 16:52:56 by vmanzoni          #+#    #+#             */
-/*   Updated: 2019/04/14 21:54:07 by vmanzoni         ###   ########.fr       */
+/*   Updated: 2019/06/01 16:36:56 by vmanzoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/libft.h"
 
-char	*read_file(char *file)
+char	*ft_read_file(char *file)
 {
 	int		fd;
 	int		ret;
-	char	buf[BUFF_SIZE + 1];
+	char	buf[BUF_SIZE + 1];
 	char	*result;
 
 	if ((fd = open(file, O_RDONLY)) == -1)
 		return (NULL);
-	while ((ret = read(fd, buf, BUFF_SIZE)))
+	while ((ret = read(fd, buf, BUF_SIZE)))
 		buf[ret] = '\0';
 	result = ft_strdup(buf);
 	close(fd);

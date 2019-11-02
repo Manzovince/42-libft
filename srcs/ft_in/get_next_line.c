@@ -6,7 +6,7 @@
 /*   By: vmanzoni <vmanzoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/25 12:18:10 by vmanzoni          #+#    #+#             */
-/*   Updated: 2019/04/08 21:43:56 by vmanzoni         ###   ########.fr       */
+/*   Updated: 2019/06/01 16:36:45 by vmanzoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static t_list	*ft_stock_lines(t_list **start, int fd)
 
 int				get_next_line(const int fd, char **line)
 {
-	char			buf[BUFF_SIZE + 1];
+	char			buf[BUF_SIZE + 1];
 	int				rv;
 	t_list			*start;
 	static t_list	*p;
@@ -40,7 +40,7 @@ int				get_next_line(const int fd, char **line)
 		return (-1);
 	start = p;
 	p = ft_stock_lines(&start, fd);
-	while (!ft_strchr(p->content, '\n') && (rv = read(fd, buf, BUFF_SIZE)))
+	while (!ft_strchr(p->content, '\n') && (rv = read(fd, buf, BUF_SIZE)))
 		p->content = ft_strnjoin_free(p->content, buf, rv, '1');
 	rv = 0;
 	while (((char*)p->content)[rv] && ((char*)p->content)[rv] != '\n')

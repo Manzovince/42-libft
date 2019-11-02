@@ -1,26 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_pow.c                                           :+:      :+:    :+:   */
+/*   ft_strndup_free.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vmanzoni <vmanzoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/08 21:27:53 by vmanzoni          #+#    #+#             */
-/*   Updated: 2019/09/10 17:59:40 by vmanzoni         ###   ########.fr       */
+/*   Created: 2019/03/25 15:02:42 by vmanzoni          #+#    #+#             */
+/*   Updated: 2019/04/15 14:57:27 by vmanzoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/libft.h"
 
-int		ft_pow(int n, int power)
+char	*ft_strndup_free(const char *s, size_t n)
 {
-	int	result;
+	char	*str;
 
-	result = 1;
-	while (power > 0)
-	{
-		result *= n;
-		power--;
-	}
-	return (power < 0) ? 0 : result;
+	if (!(str = ft_strnew(n)))
+		return (NULL);
+	str = ft_strncpy(str, (char *)s, n);
+	str[n] = '\0';
+	free((void*)s);
+	return (str);
 }

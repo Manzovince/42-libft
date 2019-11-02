@@ -1,26 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_pow.c                                           :+:      :+:    :+:   */
+/*   ft_putnbrendl.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vmanzoni <vmanzoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/08 21:27:53 by vmanzoni          #+#    #+#             */
-/*   Updated: 2019/09/10 17:59:40 by vmanzoni         ###   ########.fr       */
+/*   Created: 2018/11/22 15:28:15 by vmanzoni          #+#    #+#             */
+/*   Updated: 2019/04/30 14:35:52 by vmanzoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/libft.h"
 
-int		ft_pow(int n, int power)
+void	ft_putnbrendl(int n)
 {
-	int	result;
+	long long num;
 
-	result = 1;
-	while (power > 0)
+	num = n;
+	if (num < 0)
 	{
-		result *= n;
-		power--;
+		ft_putchar('-');
+		num = -num;
 	}
-	return (power < 0) ? 0 : result;
+	if (num >= 10)
+		ft_putnbr(num / 10);
+	ft_putchar((num % 10) + '0');
+	write(1, "\n", 1);
 }

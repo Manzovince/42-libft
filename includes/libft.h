@@ -6,7 +6,7 @@
 /*   By: vmanzoni <vmanzoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/06 21:46:33 by vmanzoni          #+#    #+#             */
-/*   Updated: 2019/04/14 21:54:41 by vmanzoni         ###   ########.fr       */
+/*   Updated: 2019/10/15 18:33:52 by vmanzoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,22 @@
 ** MACROS
 */
 
+# define BUF_SIZE 1000
+
 # define INT_MIN -2147483648
 # define INT_MAX 2147483647
 
-# define BUFF_SIZE 128
+#define ABS(v) ((v) < 0 ? -(v) : (v))
+
+# define RED   "\x1B[31m"
+# define GRN   "\x1B[32m"
+# define YEL   "\x1B[33m"
+# define BLU   "\x1B[34m"
+# define MAG   "\x1B[35m"
+# define CYN   "\x1B[36m"
+# define RESET "\x1B[0m"
+
+//# define BUFF_SIZE 2048
 
 /*
 ** STRUCTURE
@@ -62,9 +74,10 @@ int					*ft_intnew(size_t size);
 size_t				ft_strlen(const char *s);
 char				*ft_strdup(const char *s1);
 char				*ft_strndup(const char *s, size_t n);
+char				*ft_strndup_free(const char *s, size_t n);
 char				*ft_strcpy(char *dst, const char *src);
 char				*ft_strncpy(char *dst, const char *src, size_t n);
-char				*ft_strcat(char *s1, const char *s2);
+char				*ft_strcat(char *dst, const char *src);
 char				*ft_strncat(char *s1, const char *s2, size_t n);
 size_t				ft_strlcat(char *dst, const char *src, size_t size);
 char				*ft_strchr(const char *s, int c);
@@ -106,6 +119,10 @@ char				*ft_strupr(char *s1);
 
 int					ft_atoi(const char *str);
 char				*ft_itoa(int n);
+char				*ft_itoa_base(int value, int base);
+char				*ft_itoa_base_low(int value, int base);
+char				*ft_ftoa(double number);
+char				*ft_ftoap(double number, double afterpoint);
 int					ft_abs(int x);
 
 int					ft_toupper(int c);
@@ -127,17 +144,28 @@ int					ft_isnumber(char *str);
 int					ft_isinteger(char *str);
 
 /*
-** PRINT FUNCTIONS
+** IN FUNCTIONS
+*/
+
+char				*ft_read_file(char *file);
+int					get_next_line(const int fd, char **line);
+
+/*
+** OUT FUNCTIONS (Print)
 */
 
 void				ft_putchar(char c);
+void				ft_putchar_color(char c, char color);
 void				ft_putstr(char const *c);
+void				ft_putstr_color(char *str, char color);
 void				ft_putendl(char const *s);
 void				ft_putnbr(int n);
+void				ft_putnbrendl(int n);
 void				ft_putchar_fd(char c, int fd);
 void				ft_putstr_fd(char const *s, int fd);
 void				ft_putendl_fd(char const *s, int fd);
 void				ft_putnbr_fd(int n, int fd);
+void				ft_print_bits(unsigned int bits, int size);
 
 /*
 ** LST FUNCTIONS
@@ -152,19 +180,21 @@ t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 void				ft_lstappend(t_list *list, t_list *new);
 
 /*
-** IN FUNCTIONS
-*/
-
-char				*read_file(char *file);
-int					get_next_line(const int fd, char **line);
-
-
-/*
 ** SORT FUNCTIONS
 */
 
 void				ft_bubblesort_array(char **tab, size_t n);
 int					ft_clamp(int n, int min, int max);
 void				ft_swap(int *a, int *b);
+
+/*
+** SORT FUNCTIONS
+*/
+
+int					ft_abs(int x);
+int					ft_clamp(int n, int min, int max);
+int					ft_pow(int n, int power);
+double				ft_powd(int n, int power);
+double				ft_sqrt(double a);
 
 #endif

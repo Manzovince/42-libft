@@ -1,26 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_pow.c                                           :+:      :+:    :+:   */
+/*   ft_itoa_base_low.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vmanzoni <vmanzoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/08 21:27:53 by vmanzoni          #+#    #+#             */
-/*   Updated: 2019/09/10 17:59:40 by vmanzoni         ###   ########.fr       */
+/*   Created: 2019/04/08 21:32:08 by vmanzoni          #+#    #+#             */
+/*   Updated: 2019/10/15 18:31:21 by vmanzoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/libft.h"
 
-int		ft_pow(int n, int power)
+void	aux(int n, int b, char *ans, int *p)
 {
-	int	result;
+	char	base[] = "0123456789abcdef";
 
-	result = 1;
-	while (power > 0)
-	{
-		result *= n;
-		power--;
-	}
-	return (power < 0) ? 0 : result;
+	if (n <= -b || b <= n)
+		aux(n / b, b, ans, p);
+	ans[(*p)++] = base[ABS(n % b)];
+}
+
+char	*ft_itoa_base_low(int value, int base)
+{
+	char	*ans;
+	int		p;
+
+	if (base < 2 || 16 < base
+		|| !(ans = (char *)malloc(sizeof(char) * 35)))
+		return (NULL);
+	p = 0;
+	if (base == 10 && value < 0)
+		ans[p++] = '-';
+	aux(value, base, ans, &p);
+	ans[p] = '\0';
+	return (ans);
 }

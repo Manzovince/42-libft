@@ -1,26 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_pow.c                                           :+:      :+:    :+:   */
+/*   ft_putchar_color.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vmanzoni <vmanzoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/08 21:27:53 by vmanzoni          #+#    #+#             */
-/*   Updated: 2019/09/10 17:59:40 by vmanzoni         ###   ########.fr       */
+/*   Created: 2019/05/08 08:59:53 by vmanzoni          #+#    #+#             */
+/*   Updated: 2019/05/08 09:00:13 by vmanzoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/libft.h"
 
-int		ft_pow(int n, int power)
+void ft_putchar_color(char c, char color)
 {
-	int	result;
-
-	result = 1;
-	while (power > 0)
-	{
-		result *= n;
-		power--;
-	}
-	return (power < 0) ? 0 : result;
+	if (color == 'R')
+		write(1, RED, 5);
+	else if (color == 'B')
+		write(1, BLU, 5);
+	else if (color == 'G')
+		write(1, GRN, 5);
+	else if (color == 'Y')
+		write(1, YEL, 5);
+	else if (color == 'M')
+		write(1, MAG, 5);
+	else if (color == 'C')
+		write(1, CYN, 5);
+	else if (color == 'W')
+		write(1, RESET, 5);
+	ft_putchar(c);
+	write(1, RESET, 5);
 }
